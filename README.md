@@ -28,6 +28,19 @@ git commit -a -m "Update to newest libproj"
 git push
 ```
 
+# Investigate which submodules were changed and need be commited
+
+One of difficulties working with submodules is proper management of changes in each of submodules (especially if there is more of them).
+We can detect changes in submodule using: 
+```
+git status
+```
+In order to get more detailed info about changes:
+```
+git submodule foreach --recursive git status
+```
+When it is required to go manually to each submodule and commit changes or create a script doint that.
+
 # Update to the latest version of the submodule project
 
 If someone made change in `libproj` then it is nice to update the submodule:
