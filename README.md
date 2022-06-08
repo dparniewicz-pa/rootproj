@@ -37,3 +37,9 @@ git pull
 ```
 and we have latest version of `libproj` available locally in `rootproj`.
 
+To update that in the remote `rootproj` repository: 
+```
+cd ..
+git commit -a -m "Update to newest libproj"
+git push
+```
