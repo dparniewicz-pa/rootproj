@@ -6,7 +6,7 @@ git submodule init
 git commit -a -m "Adding libproj as submodule"
 git push
 ```
-
+A new file `.gitmodules` is created.
 
 # Commit changes to the submodule project
 After making code changes in `rootproj/libproj/libproj/greeting.py`
@@ -34,14 +34,25 @@ If someone made change in `libproj` then it is nice to update the submodule:
 ```
 cd libproj
 git pull
+git log
 ```
 and we have latest version of `libproj` available locally in `rootproj`.
+
+Alternatively, use `git submodule` commands to update all submodules:
+```
+git submodule update --remote
+```
 
 To update that in the remote `rootproj` repository: 
 ```
 cd ..
 git commit -a -m "Update to newest libproj"
 git push
+```
+
+Check to which commit a submodule is pointing:
+```
+git submodule status
 ```
 
 # Update to a specific version of the submodule project
@@ -53,4 +64,22 @@ git checkout 86553932d12fc98559c988f7b7daefc41e3c6c78
 git commit -a -m "Use older libproj version"
 git push
 ```
+
+# Cloning repository with submodules
+Optionally can provide how many parallel submodule downloading jobs should be created:
+```
+git clone --recurse-submodules --jobs 1 git@github.com:dparniewicz-pa/rootproj.git
+```
+
+# Update all submodules
+
+Pull changes in `rootproj` togather with changes in all submodules:
+```
+git pull --recurse-submodules
+```
+Pull changes only for all submodules:
+```
+git submodule update --remote
+```
+
 
