@@ -27,3 +27,13 @@ git remote get-url origin
 git commit -a -m "Update to newest libproj"
 git push
 ```
+
+# Update to the latest version of the submodule project
+
+If someone made change in `libproj` then it is nice to update the submodule:
+```
+cd libproj
+git pull
+```
+and we have latest version of `libproj` available locally in `rootproj`.
+
