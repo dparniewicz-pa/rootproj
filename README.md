@@ -43,3 +43,6 @@ cd ..
 git commit -a -m "Update to newest libproj"
 git push
 ```
+
+# Update to a specific version of the submodule project
+
