@@ -1,0 +1,3 @@
+[submodule "libproj"]
+	path = libproj
+	url = git@github.com:dparniewicz-pa/libproj.git
