@@ -53,7 +53,7 @@ and we have latest version of `libproj` available locally in `rootproj`.
 
 Alternatively, use `git submodule` commands to update all submodules:
 ```
-git submodule update --remote
+git submodule update --remote --merge
 ```
 
 To update that in the remote `rootproj` repository: 
@@ -95,4 +95,19 @@ Pull changes only for all submodules:
 git submodule update --remote
 ```
 
+# Submodule detached
 
+When updating submodules using:
+```
+git submodule update --remote
+```
+then submodule becomes detached from head of the submodule repository.
+
+To correct that
+```
+cd libproj
+git checkout main
+```
+and use `--merge` or `--rebase` options for `git submodule update`.
+More on this problem:
+https://stackoverflow.com/questions/18770545/why-is-my-git-submodule-head-detached-from-master
