@@ -45,4 +45,12 @@ git push
 ```
 
 # Update to a specific version of the submodule project
+To use in the `rootproj` the another version of `libproj` apply any proper git command within the `libproj`.
+In example to use older version:
+```
+cd libproj
+git checkout 86553932d12fc98559c988f7b7daefc41e3c6c78
+git commit -a -m "Use older libproj version"
+git push
+```
 
