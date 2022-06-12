@@ -111,3 +111,11 @@ git checkout main
 and use `--merge` or `--rebase` options for `git submodule update`.
 More on this problem:
 https://stackoverflow.com/questions/18770545/why-is-my-git-submodule-head-detached-from-master
+
+
+# Git submodule with poetry
+Poetry can disover and install dependencies of git submodule `libproj`. All required libraries will be installed in `rootproj`:
+```
+[tool.poetry.dependencies]
+libproj = { path = "./libproj", develop = true }
+```
