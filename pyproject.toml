@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "rootproj"
+version = "0.1.0"
+description = ""
+authors = ["Damian Parniewicz <dparniewicz@paloaltonetworks.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+libproj = { path = "./libproj", develop = true }
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+app = "rootproj.app:run"
